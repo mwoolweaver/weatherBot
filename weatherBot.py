@@ -13,7 +13,6 @@ import configparser
 import logging
 import os
 import pickle
-import random
 import sys
 import textwrap
 import time
@@ -400,7 +399,7 @@ def main(path):
         except yaml.YAMLError as err:
             logging.error(err, exc_info=True)
             logging.error('Could not read YAML file, please correct, run yamllint, and try again.')
-            exit()
+            sys.exit()
 
     location = CONFIG['default_location']
     updated_time = utils.datetime_to_utc('UTC', datetime.utcnow()) - timedelta(minutes=30)
@@ -428,8 +427,8 @@ def main(path):
         logging.error('We got an exception!', exc_info=True)
         if CONFIG['basic']['dm_errors']:
             api = get_tweepy_api()
-            api.send_direct_message(screen_name=api.me().screen_name,
-                                    text=str(random.randint(0, 9999)) + traceback.format_exc())
+            api.send_direct_message(recipient_id=api.me().id,
+                                    text=datetime.utcnow().isoformat() + '\n' + traceback.format_exc())
 
 
 if __name__ == '__main__':
