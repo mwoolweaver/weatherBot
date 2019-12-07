@@ -6,7 +6,7 @@ A Twitter bot for weather. [Powered by Dark Sky](https://darksky.net/poweredby/)
 
 _**Note: Any language or wording suggestions are appreciated and should be submitted as an issue or pull request.**_
 
-Example bots can be found at [@MorrisMNWeather](https://twitter.com/MorrisMNWeather) and [@WeatherByBrian](https://twitter.com/WeatherByBrian).
+Example bots can be found at [@MorrisMNWeather](https://twitter.com/MorrisMNWeather), [@WeatherByBrian](https://twitter.com/WeatherByBrian), and [@KerrosTower](https://twitter.com/KerrosTower)
 
 weatherBot tweets the current weather condition at scheduled times. If a special weather event is happening, it will tweet that (outside of the scheduled times). weatherBot can also tweet the current day's forecast.
 
